@@ -36,11 +36,8 @@
         "anonymous": "always",
         "named": "always",
         "asyncArrow": "always"
-    }],
-    "prettier": {
-      "space-before-function-paren": ["error", "always"]
-  }
-      
+    }]
+         
         }
     }
       }
