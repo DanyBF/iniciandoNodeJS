@@ -9,7 +9,14 @@ function findAvailablePort(desiredPort) {
         resolve(port)
       })
     })
+
+    server.on('error', (err) => {
+      if (err.code === 'EADDRINUSE') {
+        findAvailablePort(0).then((port) => resolve(port))
+      } else {
+        reject(err)
+      }
+    })
   })
 }
-
 module.exports = { findAvailablePort }
